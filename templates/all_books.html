@@ -1,0 +1,23 @@
+
+{% extends "layout.html" %}
+{% block body %}
+    <h2>Последние 15 книг</h2>
+    {% for book in books %}
+        <ul>
+            <li> Название книги : {{ book.name }}</li>
+            <li> Добавлена : {{ book.added }}</li>
+            <li>
+                <a href="{{ url_for('books_by_genre',genre_id=book.genre_id) }}"> Жанр : {{ book.genre.name }}</a>
+            </li>
+        </ul>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+
